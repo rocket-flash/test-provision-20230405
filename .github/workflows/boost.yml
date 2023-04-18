@@ -21,12 +21,19 @@ jobs:
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
-          api_endpoint: https://api.dev.boostsec.io
+          api_endpoint: ${{ vars.BOOST_API_ENDPOINT }}
           registry_module: boostsecurityio/checkov
 
       - name: BoostSecurity Native Scanner
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
-          api_endpoint: https://api.dev.boostsec.io
+          api_endpoint: ${{ vars.BOOST_API_ENDPOINT }}
           registry_module: boostsecurityio/native-scanner
+
+      - name: BoostSecurity semgrep
+        uses: boostsecurityio/boostsec-scanner-github@v4
+        with:
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          api_endpoint: ${{ vars.BOOST_API_ENDPOINT }}
+          registry_module: boostsecurityio/semgrep
