@@ -16,4 +16,4 @@ jobs:
 
       - name: Show payload
         run: |
-          echo "${{github.event.inputs.client_payload}}" | jq
+          echo '${{github.event.inputs.client_payload}}' | jq
