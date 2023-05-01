@@ -3,6 +3,6 @@
 import hashlib
 
 hasher = hashlib.sha1()
-hasher.update(b"trololol")
+hasher.update(b"TROLOLOL")
 
 print(hasher.hexdigest())
